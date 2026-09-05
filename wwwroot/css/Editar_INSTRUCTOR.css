@@ -1,0 +1,72 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Estilos para el formulario de Editar Usuario */
+.editar-usuario-body {
+    background-color: var(--color-fondo); 
+    color: var(--color-texto); 
+    font-family: Arial, sans-serif; 
+    text-align: center;
+    margin: 0;
+}
+
+.usuario-container {
+    width: 100%;
+    max-width: 600px; /* Ancho fluido en PC, 100% en teléfono */
+    margin: 0 auto;
+    background-color: var(--color-panel);
+    padding: 20px 20px 10px 20px; /* Espacio inferior reducido */
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--color-sombra);
+    text-align: center;
+}
+
+.usuario-titulo {
+    color: var(--color-primario);
+    margin-top: 0;
+}
+
+.usuario-form {
+    text-align: left;
+}
+
+.usuario-input, 
+.usuario-select {
+    display: block;
+    border: 1px solid var(--color-primario);
+    padding: 8px 10px;
+    width: 100% !important; /* Pasa de 30% a 100% para evitar campos comprimidos */
+    margin: 0 auto 12px auto;
+    font-size: 16px; /* Previene zoom automático en teléfonos */
+    border-radius: 4px;
+    background-color: transparent;
+    color: inherit;
+}
+
+.btn-accion {
+    display: inline-block;
+    width: 120px;
+    padding: 10px 0;
+    color: white;
+    font-size: 13px;
+    font-family: 'Arial', serif;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin: 5px 5px 0 5px; /* Pegado a la parte inferior */
+}
+
+.btn-guardar { background-color: #0368d3; }
+.btn-limpiar { background-color: #f44336; }
+.btn-salir   { background-color: #555555; }
+
+/* Adaptación táctil para móviles */
+@media (max-width: 480px) {
+    .btn-accion {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

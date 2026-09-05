@@ -1,0 +1,86 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px; /* Ancho amplio en PC, 100% en celular */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 20px 10px 20px; /* Relleno inferior reducido */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-container h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+.form-container form {
+    text-align: left;
+}
+
+.form-group {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    color: #000;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    display: block;
+    border: 1px solid #207ffc;
+    padding: 8px 10px;
+    width: 100% !important; /* Expansión completa para no verse apretados */
+    margin: 0 auto;
+    font-size: 16px; /* Evita el zoom automático en celulares */
+    border-radius: 4px;
+}
+
+.btn-guardar,
+.btn-salir {
+    display: inline-block;
+    width: 120px;
+    padding: 10px 0;
+    color: white;
+    font-size: 13px;
+    font-family: 'Arial', serif;
+    text-decoration: none;
+    border-radius: 1px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin: 5px 5px 0 5px; /* Ajuste pegado al fondo */
+}
+
+.btn-guardar {
+    background-color: #0368d3;
+}
+
+.btn-salir {
+    background-color: #555555;
+}
+
+/* Adaptación táctil para móviles */
+@media (max-width: 480px) {
+    .btn-guardar,
+    .btn-salir {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

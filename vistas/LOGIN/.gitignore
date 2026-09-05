@@ -1,0 +1,6 @@
+# Credenciales reales (SMTP + JWT_SECRET) - NUNCA subir esto
+modelos/credenciales.php
+
+# Otros
+vendor/
+*.log

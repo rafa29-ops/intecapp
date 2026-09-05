@@ -1,0 +1,81 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    width: 100%;
+    max-width: 600px; /* Ancho cómodo en desktop, 100% en pantallas móviles */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 20px 10px 20px; /* Padding inferior acortado */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.titulo-formulario {
+    color: #007bff;
+    text-align: center;
+    margin-top: 0;
+}
+
+/* Estilos de inputs */
+.label-input {
+    display: block;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.form-input {
+    display: block;
+    border: 1px solid #207ffc;
+    padding: 8px 10px;
+    width: 100% !important; /* Pasa de 30% a 100% para evitar campos comprimidos */
+    margin: 0 auto 12px auto;
+    font-size: 16px; /* Evita el zoom automático en celulares */
+    border-radius: 4px;
+}
+
+/* Clases para el manejo de errores */
+.ocultar { display: none; }
+.mostrar { display: block; }
+
+/* Estilos de botones */
+.btn-form {
+    display: inline-block;
+    width: 120px;
+    padding: 10px 0;
+    color: white;
+    font-size: 13px;
+    font-family: 'Arial', serif;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-guardar { background-color: #0368d3; }
+.btn-limpiar { background-color: #f44336; }
+.btn-salir   { background-color: #555555; }
+
+/* Adaptación táctil para móviles */
+@media (max-width: 480px) {
+    .btn-form {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

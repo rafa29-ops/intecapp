@@ -1,0 +1,87 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Estilos para el formulario de Mantenimiento */
+.mantenimiento-body {
+    background-color: var(--color-fondo); 
+    color: var(--color-texto); 
+    font-family: Arial, sans-serif; 
+    text-align: center;
+    margin: 0;
+}
+
+.mantenimiento-container {
+    width: 100%;
+    max-width: 600px; /* Ancho fluido en PC, 100% en celular */
+    margin: 0 auto;
+    background-color: var(--color-panel);
+    padding: 20px 20px 10px 20px; /* Espacio inferior reducido */
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--color-sombra);
+    text-align: center;
+}
+
+.mantenimiento-titulo {
+    color: var(--color-primario);
+    margin-top: 0;
+}
+
+.mantenimiento-form {
+    text-align: left;
+}
+
+.mantenimiento-input, 
+.mantenimiento-select {
+    display: block;
+    border: 1px solid var(--color-primario);
+    padding: 8px 10px;
+    width: 100% !important; /* Pasa de 30% a 100% para celulares */
+    margin: 0 auto 12px auto; /* Centra los inputs y da espacio inferior */
+    font-size: 16px; /* Evita zoom automático en navegadores móviles */
+    border-radius: 4px;
+    background-color: transparent;
+    color: inherit;
+}
+
+/* Ajuste para los labels */
+.mantenimiento-container label {
+    display: block;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+/* Contenedor de botones para mantener la alineación */
+.mantenimiento-botones {
+    margin-top: 15px;
+    margin-bottom: 5px; /* Reducido para acortar la parte inferior */
+    text-align: center;
+}
+
+.btn-accion {
+    display: inline-block;
+    width: 120px;
+    padding: 10px 0;
+    color: white;
+    font-size: 13px;
+    font-family: 'Arial', serif;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-guardar { background-color: #0368d3; }
+.btn-limpiar { background-color: #f44336; }
+.btn-salir   { background-color: #555555; }
+
+/* Adaptación táctil para móviles */
+@media (max-width: 480px) {
+    .btn-accion {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,424 @@
+/* =====================================================
+   AGREGAR USUARIO — Hoja de estilos completa (Responsiva)
+   ===================================================== */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 20px 10px 20px; /* Espacio inferior reducido dentro de la ficha */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+#titulo-formulario {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.form-group label[for="tipo_usuario"],
+#tipo_usuario_label {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+#tipo_usuario {
+    display: block; /* Necesario para que margin auto funcione en elementos select/input */
+    border: 1px solid #207ffc;
+    padding: 8px 10px;
+    width: 100% !important; /* Expansión a ancho completo en celular */
+    max-width: 300px; /* Límite para pantallas grandes */
+    margin: 0 auto; /* Centra el elemento horizontalmente */
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+/* Formulario oculto por defecto — JS lo muestra */
+#formulario-usuario {
+    display: none;
+    text-align: left;
+}
+
+/* Área de especialización oculta por defecto */
+#area-section {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    color: #000000;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    display: block;
+    border: 1px solid #207ffc;
+    padding: 8px 10px;
+    width: 100% !important; /* Aprovecha el 100% del contenedor para que no se vean estrechos */
+    font-size: 16px; /* Evita que Safari en iOS haga zoom al presionar el input */
+    border-radius: 4px;
+}
+
+.btn {
+    display: inline-block;
+    width: 120px;
+    padding: 10px 0;
+    color: white;
+    font-size: 13px;
+    font-family: 'Arial', serif;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin: 5px 5px 0 5px; /* Pegado a la parte inferior */
+}
+
+.btn-guardar { background-color: #0368d3; }
+.btn-limpiar { background-color: #f44336; }
+.btn-salir   { background-color: #555555; }
+
+/* =====================================================
+   SECCIÓN DE FOTOGRAFÍA
+   ===================================================== */
+
+#foto-section {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+    border: 1.5px solid #c2d9f8;
+    border-radius: 12px;
+    padding: 20px 16px 18px;
+    margin: 14px auto 15px auto;
+    width: 100%; /* Adaptable a móvil sin romper proporciones */
+    box-shadow: 0 2px 12px rgba(0, 123, 255, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+#foto-section:hover {
+    box-shadow: 0 4px 18px rgba(0, 123, 255, 0.14);
+}
+
+.foto-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.foto-titulo .label-principal {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1a1a2e;
+    letter-spacing: 0.2px;
+}
+
+.foto-titulo .badge-opcional {
+    font-size: 10.5px;
+    background-color: #ddeeff;
+    color: #4a90d9;
+    border-radius: 20px;
+    padding: 2px 9px;
+    font-weight: 500;
+    border: 1px solid #b8d4f5;
+}
+
+.foto-fuente-btns {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap; /* Permite que los botones bajen si no caben en pantalla chica */
+}
+
+.foto-fuente-btns button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    padding: 7px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1.5px solid #c2d9f8;
+    background-color: #fff;
+    color: #4a7db5;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.foto-fuente-btns button:hover {
+    border-color: #007bff;
+    color: #007bff;
+    background-color: #f0f7ff;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.12);
+}
+
+.foto-fuente-btns button.activo {
+    background-color: #007bff;
+    border-color: #0069d9;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.30);
+}
+
+/* Panel archivo */
+#input-archivo {
+    display: none;
+    animation: fadeSlide 0.25s ease;
+}
+
+.drop-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border: 2px dashed #a8caee;
+    border-radius: 8px;
+    padding: 16px 12px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.drop-zone:hover {
+    border-color: #007bff;
+    background: #f4f9ff;
+}
+
+.drop-zone i {
+    font-size: 28px;
+    color: #6faee0;
+}
+
+.drop-zone .drop-texto {
+    font-size: 12.5px;
+    color: #5a8abf;
+    font-weight: 500;
+}
+
+.drop-zone small {
+    font-size: 10.5px;
+    color: #9bb8d4;
+}
+
+#foto_instructor {
+    display: none;
+}
+
+/* Panel cámara */
+#input-camara {
+    display: none;
+    animation: fadeSlide 0.25s ease;
+}
+
+#video-camara {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 4/3;
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(0, 123, 255, 0.18);
+    background: #000;
+}
+
+#btn-capturar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 10px auto 0 auto;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 7px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.25);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+#btn-capturar:hover {
+    background-color: #218838;
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.35);
+}
+
+/* Vista previa */
+#preview-container {
+    display: none;
+    margin-top: 14px;
+    animation: fadeSlide 0.3s ease;
+}
+
+.preview-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.preview-label {
+    font-size: 11px;
+    color: #7a9ec2;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}
+
+#foto-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    box-shadow: 0 3px 14px rgba(0, 123, 255, 0.28);
+    display: block;
+}
+
+#btn-quitar-foto {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    color: #c0392b;
+    background: none;
+    border: 1px solid #f5c6c2;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 3px 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+#btn-quitar-foto:hover {
+    background: #fdf0ef;
+    color: #a93226;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* =====================================================
+   INSTRUCTORES — Tabla de listado
+   ===================================================== */
+
+.td-foto {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.instructor-foto {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    box-shadow: 0 1px 4px rgba(0, 123, 255, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+.instructor-foto-placeholder {
+    font-size: 36px;
+    color: #ced4da;
+    display: block;
+    text-align: center;
+}
+
+/* =====================================================
+   USUARIOS — Tabla de listado (foto pequeña)
+   ===================================================== */
+
+.usuario-foto {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #207ffc;
+    display: block;
+    margin: 0 auto;
+}
+
+.usuario-foto-placeholder {
+    font-size: 32px;
+    color: #ced4da;
+    display: block;
+    text-align: center;
+}
+
+/* =====================================================
+   FILTROS — Botones de cargo en USUARIO.php
+   ===================================================== */
+
+.active-filtro {
+    background-color: #007bff !important;
+    color: white !important;
+    border-color: #007bff !important;
+}
+
+/* =====================================================
+   BOTÓN REPORTE
+   ===================================================== */
+
+.btn-reporte {
+    display: inline-block;
+    width: 120px;
+    padding: 10px 0;
+    background-color: #007bff;
+    color: white;
+    font-size: 13px;
+    font-family: 'Times New Roman', serif;
+    border: none;
+    border-radius: 1px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-reporte:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.text-right { text-align: right; }
+.mb-3       { margin-bottom: 1rem; }
+
+/* =====================================================
+   MEDIA QUERIES — Adaptación exclusiva para teléfonos
+   ===================================================== */
+
+@media (max-width: 480px) {
+    .btn, .btn-reporte {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,87 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+/* Contenedor principal del perfil */
+.form-container {
+    width: 100%;
+    max-width: 600px; /* En pantallas grandes no se expande demasiado, en móvil toma todo el ancho */
+    margin: 10px auto;
+    background-color: #fff;
+    padding: 20px 20px 10px 20px; /* Relleno inferior reducido dentro de la ficha */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.titulo-perfil {
+    color: #007bff;
+    margin: 0 0 15px 0;
+}
+
+/* Botón de tema */
+.btn-tema {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-tema:hover {
+    background-color: #0056b3;
+}
+
+/* Foto de usuario */
+.foto-usuario {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+    display: block;
+    margin: 15px auto;
+}
+
+/* Grupos de datos */
+.dato-label {
+    color: #000000;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 14px;
+}
+
+.dato-valor {
+    margin: 0 0 15px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 15px;
+    padding-bottom: 10px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Adaptación rápida para celulares pequeños */
+@media (max-width: 480px) {
+    .btn-tema {
+        width: 100%; /* Botón al 100% en pantallas móviles para mejor toque */
+        padding: 10px 0;
+    }
+}
